@@ -18,6 +18,9 @@ function clearSingle() {
     display.value = display.value.slice(0, -1);
 }
 
+
+let History = [];
+
 function calculate() {
     const display = document.querySelector('.Display');
 
@@ -38,4 +41,13 @@ function calculate() {
     }catch (error){
         display.value = 'Error';
     }
+    
+
+    History.push(display.value);
+    document.getElementById('wynik').innerHTML = History.join('<br>');
+    
+   
+    
+
+
 }

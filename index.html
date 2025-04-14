@@ -7,6 +7,7 @@
     <title>Kalkulator</title>
 </head>
 <body>
+<div class="container">
     <div class="Kalkulator">
         <input type="text" readonly class="Display">
         <input type="button" value="C" class="operator" onclick="clearDisplay()">
@@ -33,6 +34,11 @@
         <input type="button" value="0" class="number" onclick="number(0)">
         <input type="button" value="+" class="operator" onclick="operator('+')">
         <input type="button" value="=" class="operator" onclick="calculate()">
+    </div>
+    <div class="History">
+        History:
+        <p id="wynik"></p>
+    </div>
     </div>
     <script src="js.js"></script>
 </body>
