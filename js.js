@@ -35,15 +35,16 @@ function calculate() {
     if(openParens > closeParens){
     display.value += ')'.repeat(openParens - closeParens);
     }
-    
+    const value = display.value;
     try{
-        display.value = Function("return " + display.value)();
+        display.value =  math.evaluate(display.value);
+        History.push(`${value} = ${display.value}`); 
     }catch (error){
         display.value = 'Error';
     }
     
 
-    History.push(display.value);
+   
     document.getElementById('wynik').innerHTML = History.join('<br>');
     
    
